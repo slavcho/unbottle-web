@@ -360,7 +360,6 @@ h3 {
 }
 .stat-what { font-weight: 500; font-size: 1.125rem; }
 .stat-delta { color: var(--text-muted); font-size: 1.125rem; }
-.results-note { margin-top: 1.25rem; font-size: 0.875rem; font-weight: 500; color: var(--text-muted); }
 
 /* Why us ----------------------------------------------------------------- */
 .why-inner { display: grid; gap: 2.5rem; }
