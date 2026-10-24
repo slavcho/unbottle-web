@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>unbottle. — find the bottleneck. remove it.</title>
   <meta name="description" content="unbottle. is an AI consultancy for business owners and operators. We map how work moves through your business, find the one constraint that slows everything down, and build the system that removes it.">
-  <meta name="theme-color" content="#2427FF">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15161C" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="unbottle. — find the bottleneck. remove it.">
   <meta property="og:description" content="AI systems for the workflows you already run. We map the work, find the constraint and automate it, with numbers to prove it.">
   <meta property="og:type" content="website">
@@ -63,7 +64,10 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="unbottle. home">
-        <img src="images/logo.svg" width="183" height="26" alt="unbottle.">
+        <picture>
+          <source srcset="images/logo.svg" media="(prefers-color-scheme: dark)">
+          <img src="images/logo-light.svg" width="183" height="30" alt="unbottle.">
+        </picture>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
@@ -74,7 +78,7 @@
         <a href="#services">Services</a>
         <a href="#process">How we work</a>
         <a href="#results">Results</a>
-        <a class="btn btn-small" href="#talk">Talk</a>
+        <a class="btn btn-small btn-secondary" href="#talk">Book an audit</a>
       </nav>
     </div>
   </header>
@@ -83,21 +87,52 @@
     <section id="top" class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="label">AI consultancy · for owners and operators</p>
-          <h1 class="display">find the bottleneck<span class="dot">.</span><br>remove it<span class="dot">.</span></h1>
+          <p class="chip chip-dot">AI consultancy for owners and operators</p>
+          <h1 class="display">
+            <span class="visually-hidden">unbottle your business.</span>
+            <span aria-hidden="true">unbottle your <span class="roll-line"><span class="roll"><span class="roll-word">business</span></span>.</span></span>
+          </h1>
           <p class="lead">
-            AI systems for the workflows you already run. We map the work, find the constraint
-            and automate it, with numbers to prove it.
+            We find the one step that slows your business down, automate it, and prove the gain
+            with numbers.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#talk">Find my bottleneck</a>
-            <a class="btn btn-ghost" href="#process">See how we work</a>
+            <a class="btn btn-primary btn-large" href="#talk">Find my bottleneck</a>
+            <a class="btn btn-ghost btn-large" href="#process">See how we work</a>
           </div>
         </div>
-        <svg class="hero-mark" viewBox="0 0 160 160" aria-hidden="true">
-          <path class="walls" d="M0 0H160V22C126 22 104 72 80 72C56 72 32 42 0 42ZM0 160H160V138C126 138 104 88 80 88C56 88 32 118 0 118Z"/>
-          <circle class="dot" cx="130" cy="80" r="26" style="fill: var(--dot); stroke: none"/>
-        </svg>
+        <figure class="proof" aria-label="Example: invoice approval before and after removing the bottleneck">
+          <p class="proof-path">app.unbottle.ai / workflows / invoice-approval</p>
+          <div class="proof-body">
+            <div class="proof-head">
+              <p class="proof-title">Invoice approval</p>
+              <span class="chip">Example</span>
+            </div>
+            <ol class="stages">
+              <li class="stage">Received<span>0.2 d</span></li>
+              <li class="stage">Review<span>0.4 d</span></li>
+              <li class="stage stage-jam">Approve<span>2.5 d</span></li>
+              <li class="stage">Paid<span>0.1 d</span></li>
+            </ol>
+            <div class="proof-result">
+              <div>
+                <p class="label">Cycle time</p>
+                <p class="proof-stat">4h<span class="dot">.</span></p>
+                <span class="chip">was 3.2 days</span>
+              </div>
+              <div class="bars" aria-hidden="true">
+                <span style="height: 88%"></span>
+                <span style="height: 94%"></span>
+                <span style="height: 100%"></span>
+                <span style="height: 90%"></span>
+                <span class="after" style="height: 22%"></span>
+                <span class="after" style="height: 14%"></span>
+                <span class="after" style="height: 10%"></span>
+                <span class="after" style="height: 8%"></span>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -144,7 +179,7 @@
       </div>
     </section>
 
-    <section id="process" class="section section-dark">
+    <section id="process" class="section section-alt">
       <div class="container">
         <p class="label">How we work</p>
         <h2>Four steps from bottleneck to flow<span class="dot">.</span></h2>
@@ -173,7 +208,7 @@
       </div>
     </section>
 
-    <section id="results" class="section section-alt">
+    <section id="results" class="section">
       <div class="container">
         <p class="label">Results</p>
         <h2>Every claim ends with a number<span class="dot">.</span></h2>
@@ -198,13 +233,13 @@
             <p class="label">Example · invoice approvals</p>
             <p class="stat">−87%<span class="dot">.</span></p>
             <p class="stat-what">cycle time on invoice approvals</p>
-            <p class="stat-delta">3.2 days → 4 hours</p>
+            <p class="chip stat-delta">3.2 days → 4 hours</p>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="why" class="section">
+    <section id="why" class="section section-alt">
       <div class="container why-inner">
         <div>
           <p class="label">Why unbottle.</p>
@@ -223,15 +258,17 @@
       </div>
     </section>
 
-    <section id="talk" class="section cta">
-      <div class="container cta-inner">
-        <p class="label">Talk</p>
-        <h2>Tell us what slows you down<span class="dot">.</span></h2>
-        <p class="lead">
-          Describe one process that drags. We'll reply with an honest view of whether AI can fix it,
-          and how.
-        </p>
-        <a class="btn btn-primary btn-large" href="mailto:hello@unbottle.ai">hello@unbottle.ai</a>
+    <section id="talk" class="section">
+      <div class="container">
+        <div class="cta-box">
+          <p class="label">Talk</p>
+          <h2>Tell us what slows you down<span class="dot">.</span></h2>
+          <p class="lead">
+            Describe one process that drags. We'll reply with an honest view of whether AI can fix it,
+            and how.
+          </p>
+          <a class="btn btn-on-coral btn-large" href="mailto:hello@unbottle.ai?subject=Bottleneck%20audit">Book an audit</a>
+        </div>
       </div>
     </section>
   </main>
@@ -239,7 +276,10 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="images/logo.svg" width="141" height="20" alt="unbottle.">
+        <picture>
+          <source srcset="images/logo.svg" media="(prefers-color-scheme: dark)">
+          <img src="images/logo-light.svg" width="141" height="23" alt="unbottle.">
+        </picture>
         <p class="footer-line">find the bottleneck<span class="dot">.</span> remove it<span class="dot">.</span></p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
