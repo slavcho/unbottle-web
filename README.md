@@ -13,8 +13,9 @@ Plain static site: HTML, CSS and a few lines of vanilla JS. No build step.
 ```
 index.html        the single page
 css/style.css     styles; palette and type live in CSS variables at the top
-js/main.js        mobile menu and footer year (the page works without it)
+js/main.js        mobile menu, hero word rotator and footer year (the page works without it)
 images/           logo, mark, favicons and the Open Graph image
+design/           brand book and logo pack from the designer (git-ignored, not deployed)
 ```
 
 Fonts (Inter, JetBrains Mono) load from Google Fonts.
@@ -34,14 +35,18 @@ directory is the repo root.
 
 ## Brand
 
-Follows the unbottle. Brand Guidelines v1.0 (October 2026):
+Follows the unbottle. Brand Book v2.0:
 
-- Palette: Cobalt `#2427FF`, Release Lime `#DFFF3A`, Ink Navy `#0B0B2A`,
-  White, Mist `#F1F1F7`, Steel `#5B5F8A`. Mostly cobalt, accent of lime.
-- Lime on dark, cobalt on light. Lime is never used for text on white or Mist.
+- Palette: Coral `#E11D48`, Ink `#15161C`, White, Mist `#F6F6F8`,
+  Blush `#FECDD3`, Steel `#63646E`, Coral Bright `#FB3F62` (on Ink only).
+  Mostly white, ink type, a flash of coral.
+- Coral on light, Coral Bright on Ink (dark mode), Ink or White on Coral.
+- One coral primary button per view; one coral section per page, max 1080 px
+  wide with a 32 px radius.
 - The name is always lowercase and always ends with the dot: `unbottle.`
-- One brand dot per composition.
+- Hero rotator: "unbottle your ___." holds 2.4 s, rolls 500 ms; reduced motion
+  shows "business." static.
 
-The SVG logo files in `images/` are redrawn from the guideline PNGs (Inter
-ExtraBold outlines, mark on the 160-unit grid). Replace them with official vector
-masters when available.
+The logo and favicon files in `images/` are the official masters from the logo
+pack. `logo.svg` / `mark.svg` are for dark backgrounds, `logo-light.svg` /
+`mark-light.svg` for light ones.
