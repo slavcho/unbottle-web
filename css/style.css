@@ -484,6 +484,37 @@ h3 {
 .stat-what { font-weight: 500; font-size: 1.125rem; }
 .stat-delta { align-self: flex-start; margin-top: 0.75rem; }
 
+.section-actions { margin-top: 2.5rem; }
+
+/* How we help ------------------------------------------------------------ */
+.help-grid { display: grid; gap: 1rem; }
+.help-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.help-card .label { color: var(--text-muted); }
+.help-title { font-size: 1.75rem; max-width: none; margin-bottom: 1.25rem; }
+.help-card .stages { grid-template-columns: repeat(2, 1fr); }
+.help-card .stage { padding-block: 0.5rem; text-align: center; }
+.help-meta { display: grid; gap: 0.25rem; margin: 1.75rem 0 0; }
+.help-meta dt {
+  margin-top: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.help-meta dt:first-child { margin-top: 0; }
+.help-meta dd { margin: 0; font-size: 0.97rem; color: var(--text-muted); }
+.help-meta .help-goal { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.015em; color: var(--text); }
+.help-measure { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 1.5rem; }
+
 /* Case study summaries --------------------------------------------------- */
 .case-grid { display: grid; gap: 1rem; }
 /* The whole card is clickable: the title link stretches over it */
@@ -658,6 +689,7 @@ h3 {
   .steps { grid-template-columns: repeat(2, 1fr); }
   .results-grid { grid-template-columns: 1.25fr 1fr; }
   .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .help-card .stages { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (min-width: 900px) {
@@ -700,6 +732,7 @@ h3 {
   .footer-meta { grid-column: 1 / -1; }
   .case-hero { padding-block: 4rem 6rem; }
   .case-split { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
+  .help-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-inner { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
   .contact-form { padding: 2.5rem; }
 }
