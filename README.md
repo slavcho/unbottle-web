@@ -11,11 +11,12 @@ and build the system that removes it, with numbers to prove it.
 Plain static site: HTML, CSS and a few lines of vanilla JS. No build step.
 
 ```
-index.html        the single page
+index.html        the home page
+case-studies/     one page per case study, linked from the home page
 css/style.css     styles; palette and type live in CSS variables at the top
-js/main.js        mobile menu, hero word rotator and footer year (the page works without it)
+js/main.js        mobile menu, hero word rotator and footer year (the pages work without it)
 images/           logo, mark, favicons and the Open Graph image
-design/           brand book and logo pack from the designer (git-ignored, not deployed)
+docs/             brand book, logo pack and case study sources (git-ignored, not deployed)
 ```
 
 Fonts (Inter, JetBrains Mono) load from Google Fonts.
