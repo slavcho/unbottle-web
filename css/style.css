@@ -603,8 +603,6 @@ h3 {
 .prose .label { margin-bottom: 0; }
 .prose-lead { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.015em; color: var(--text); }
 .case-stat { background: var(--surface-raised); border: 1px solid var(--border); }
-/* A result without a number: same weight, sized for a phrase */
-.stat-text { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.035em; }
 .steps-3 .step h3 { text-wrap: balance; }
 
 /* Contact page ------------------------------------------------------------ */
