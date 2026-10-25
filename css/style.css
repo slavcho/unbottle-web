@@ -576,6 +576,57 @@ h3 {
 .stat-text { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.035em; }
 .steps-3 .step h3 { text-wrap: balance; }
 
+/* Contact page ------------------------------------------------------------ */
+.contact-inner { display: grid; gap: 3rem; }
+.contact-copy .lead { margin-block: 1.5rem 2.5rem; max-width: 32rem; }
+.contact-mail { color: var(--text); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  padding: 1.75rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+.field { display: grid; gap: 0.4rem; }
+.field label { font-weight: 700; font-size: 0.95rem; }
+.field-optional { margin-left: 0.4rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease;
+}
+.field textarea { resize: vertical; min-height: 9rem; }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--text-muted); opacity: 0.8; }
+.field input:hover,
+.field textarea:hover { border-color: var(--text-muted); }
+.field input:focus-visible,
+.field textarea:focus-visible { outline: 2px solid var(--dot); outline-offset: 0; border-color: transparent; }
+.field [aria-invalid="true"] { border-color: var(--dot); }
+.field-error { font-size: 0.875rem; font-weight: 500; color: var(--tint-text); }
+.field-error:empty { display: none; }
+.field-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form .btn { justify-self: start; }
+.contact-form .btn[disabled] { opacity: 0.6; cursor: progress; }
+/* Shown by JS (.is-shown) or, without JS, by the #sent / #error redirect */
+.form-status { display: none; padding: 1rem 1.25rem; border-radius: 10px; font-size: 0.95rem; }
+.form-status.is-shown,
+.form-status:target { display: block; }
+.form-status-ok { background: var(--surface-raised); border: 1px solid var(--border); }
+.form-status-ok strong { color: var(--dot); }
+.form-status-error { background: var(--tint); color: var(--tint-text); }
+.form-status a { text-decoration: underline; text-underline-offset: 3px; }
+/* After a successful send the fields are done; only the thank-you stays */
+.contact-form.is-sent > :not(.form-status-ok),
+.contact-form:has(#sent:target) > :not(#sent) { display: none; }
+
 /* Footer ----------------------------------------------------------------- */
 .site-footer {
   background: var(--bg-alt);
@@ -649,6 +700,8 @@ h3 {
   .footer-meta { grid-column: 1 / -1; }
   .case-hero { padding-block: 4rem 6rem; }
   .case-split { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
+  .contact-inner { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
+  .contact-form { padding: 2.5rem; }
 }
 
 @media (min-width: 1100px) {

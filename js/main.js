@@ -78,6 +78,77 @@
     else start();
   }
 
+  // Contact form: send with fetch and answer in place. Without JS the form
+  // posts normally and the function redirects back to #sent or #error.
+  var form = document.querySelector('.contact-form');
+
+  if (form && window.fetch) {
+    var sent = form.querySelector('.form-status-ok');
+    var failed = form.querySelector('.form-status-error');
+    var failedText = failed.querySelector('.form-status-text');
+    var failedDefault = failedText.innerHTML;
+    var submit = form.querySelector('[type="submit"]');
+
+    // The server's messages replace the browser's validation bubbles
+    form.noValidate = true;
+
+    var setFieldError = function (name, message) {
+      var input = form.elements[name];
+      var slot = document.getElementById(input.id + '-error');
+      if (message) {
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', slot.id);
+      } else {
+        input.removeAttribute('aria-invalid');
+        input.removeAttribute('aria-describedby');
+      }
+      slot.textContent = message || '';
+    };
+
+    var showFailure = function (message) {
+      failedText.innerHTML = failedDefault;
+      if (message) failedText.textContent = message;
+      failed.classList.add('is-shown');
+      failed.focus();
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      failed.classList.remove('is-shown');
+      ['name', 'email', 'company', 'message'].forEach(function (name) { setFieldError(name, ''); });
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return { ok: false }; });
+        })
+        .then(function (data) {
+          if (data.ok) {
+            form.classList.add('is-sent');
+            sent.classList.add('is-shown');
+            sent.focus();
+            return;
+          }
+          var fields = data.fields || {};
+          Object.keys(fields).forEach(function (name) { setFieldError(name, fields[name]); });
+          var first = Object.keys(fields)[0];
+          if (first) form.elements[first].focus();
+          else showFailure(data.error);
+        })
+        .catch(function () { showFailure(); })
+        .then(function () {
+          submit.disabled = false;
+          submit.textContent = 'Send';
+        });
+    });
+  }
+
   // Footer year
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
