@@ -13,6 +13,8 @@ Plain static site: HTML, CSS and a few lines of vanilla JS. No build step.
 ```
 index.html        the home page
 case-studies/     one page per case study, linked from the home page
+contact.html      contact form; every "Book an audit" button leads here
+api/contact.js    Vercel function that emails form submissions via Resend
 css/style.css     styles; palette and type live in CSS variables at the top
 js/main.js        mobile menu, hero word rotator and footer year (the pages work without it)
 images/           logo, mark, favicons and the Open Graph image
@@ -27,7 +29,21 @@ Fonts (Inter, JetBrains Mono) load from Google Fonts.
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open http://localhost:8000. The contact form needs the Vercel function,
+so to try it locally run `vercel dev` instead.
+
+## Contact form
+
+`contact.html` posts to `api/contact.js`, which emails each submission
+through the [Resend](https://resend.com) HTTP API (no dependencies). Set these
+in the Vercel project settings:
+
+- `RESEND_API_KEY` (required)
+- `CONTACT_TO`: where submissions go, default `hello@unbottle.ai`
+- `CONTACT_FROM`: sender on a domain verified in Resend, default
+  `unbottle. website <website@unbottle.ai>`
+
+Replies go straight to the visitor: the email's reply-to is their address.
 
 ## Deploy
 
