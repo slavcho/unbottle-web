@@ -484,6 +484,35 @@ h3 {
 .stat-what { font-weight: 500; font-size: 1.125rem; }
 .stat-delta { align-self: flex-start; margin-top: 0.75rem; }
 
+/* Case study summaries --------------------------------------------------- */
+.case-grid { display: grid; gap: 1rem; }
+/* The whole card is clickable: the title link stretches over it */
+.case-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease;
+}
+.case-card:hover { border-color: var(--dot); }
+.case-card .label { color: var(--text-muted); }
+.case-card h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+.case-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.case-card > p:not([class]) { color: var(--text-muted); font-size: 0.97rem; }
+.case-card-result {
+  margin-top: auto;
+  padding-top: 2rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.015em;
+}
+.case-card-stat { display: block; font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; color: var(--dot); }
+.case-card-link { margin-top: 1.25rem; font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.case-card:hover .case-card-link { color: var(--dot); }
+
 /* Why us ----------------------------------------------------------------- */
 .why-inner { display: grid; gap: 2.5rem; }
 .why-inner .section-intro { margin-bottom: 0; }
@@ -577,6 +606,7 @@ h3 {
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .results-grid { grid-template-columns: 1.25fr 1fr; }
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
