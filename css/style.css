@@ -520,6 +520,33 @@ h3 {
 .cta-box h2 { margin-bottom: 1rem; }
 .cta-box .lead { font-weight: 500; max-width: 36rem; margin-bottom: 2rem; }
 
+/* Case study pages ------------------------------------------------------- */
+.case-hero { padding-block: 2.5rem 4.5rem; }
+.case-back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.case-back:hover { color: var(--text); }
+.case-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  max-width: 20ch;
+}
+.case-hero .lead { margin-top: 1.5rem; max-width: 40rem; }
+.case-split { display: grid; gap: 2rem; }
+.prose { display: grid; gap: 1rem; max-width: 40rem; color: var(--text-muted); }
+.prose .label { margin-bottom: 0; }
+.prose-lead { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.015em; color: var(--text); }
+.case-stat { background: var(--surface-raised); border: 1px solid var(--border); }
+/* A result without a number: same weight, sized for a phrase */
+.stat-text { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -0.035em; }
+.steps-3 .step h3 { text-wrap: balance; }
+
 /* Footer ----------------------------------------------------------------- */
 .site-footer {
   background: var(--bg-alt);
@@ -590,10 +617,13 @@ h3 {
   .why-inner { grid-template-columns: 1.1fr 1fr; align-items: start; gap: 5rem; }
   .footer-inner { grid-template-columns: 1fr auto; align-items: start; }
   .footer-meta { grid-column: 1 / -1; }
+  .case-hero { padding-block: 4rem 6rem; }
+  .case-split { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
 }
 
 @media (min-width: 1100px) {
   .steps { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .steps-3 { grid-template-columns: repeat(3, 1fr); row-gap: 3rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

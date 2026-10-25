@@ -151,4 +151,4 @@ vite.config.ts.timestamp-*
 
 # Design source files from the consultant (brand book, logo pack): kept
 # locally, not deployed
-design/
+docs/
