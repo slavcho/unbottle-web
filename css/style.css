@@ -678,8 +678,12 @@ h3 {
 @keyframes about-fizz { from { opacity: 0; transform: translate(12px, 12px); } }
 @keyframes about-pop { from { transform: scale(0.2); } }
 /* Flow lines: converge through the neck, then release. One coral line. */
-.about-flow { display: block; width: 100%; max-width: 30rem; height: auto; margin-top: 2.5rem; }
-.about-flow path { fill: none; stroke: var(--text-muted); stroke-width: 1.2; opacity: 0.55; }
+/* Stretched behind the whole story section, faint so the text stays readable */
+.about-story { position: relative; overflow: hidden; }
+.about-story .container { position: relative; }
+.about-story .case-split { align-items: center; }
+.about-flow { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35; }
+.about-flow path { fill: none; stroke: var(--text-muted); stroke-width: 1.2; opacity: 0.55; vector-effect: non-scaling-stroke; }
 .about-flow .about-flow-one { stroke: var(--dot); stroke-width: 2.5; opacity: 1; }
 .founder-grid { display: grid; gap: 1.5rem; margin-top: 3rem; }
 .founder-card {
