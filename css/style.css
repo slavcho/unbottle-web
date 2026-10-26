@@ -656,6 +656,45 @@ h3 {
 .contact-form.is-sent > :not(.form-status-ok),
 .contact-form:has(#sent:target) > :not(#sent) { display: none; }
 
+/* About page ------------------------------------------------------------- */
+.about-title {
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+/* Key visual: the wordmark tilted like a bottle, the cap popping off */
+.about-visual { max-width: 30rem; margin-inline: auto; width: 100%; }
+.about-mark { display: block; width: 100%; height: auto; overflow: visible; }
+.about-mark-word { font-family: var(--font); font-weight: 800; letter-spacing: -0.045em; fill: var(--text); }
+.about-mark-neck { fill: var(--dot); }
+.about-mark-cap { fill: var(--dot); }
+.about-mark-arc { fill: none; stroke: var(--dot); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 9 9; }
+.about-mark-bubbles { fill: var(--dot); }
+.about-mark-bubbles circle { animation: about-fizz 0.9s ease-out both; animation-delay: calc(var(--i) * 70ms + 0.2s); }
+.about-mark-cap { animation: about-pop 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) both; transform-box: fill-box; transform-origin: center; }
+@keyframes about-fizz { from { opacity: 0; transform: translate(12px, 12px); } }
+@keyframes about-pop { from { transform: scale(0.2); } }
+/* Flow lines: converge through the neck, then release. One coral line. */
+.about-flow { display: block; width: 100%; max-width: 30rem; height: auto; margin-top: 2.5rem; }
+.about-flow path { fill: none; stroke: var(--text-muted); stroke-width: 1.2; opacity: 0.55; }
+.about-flow .about-flow-one { stroke: var(--dot); stroke-width: 2.5; opacity: 1; }
+.founder-grid { display: grid; gap: 1.5rem; margin-top: 3rem; }
+.founder-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 1.75rem;
+}
+.founder-photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: calc(var(--radius) - 6px); }
+.founder-name { display: flex; align-items: center; gap: 0.75rem; margin-block: 1.5rem 1.25rem; }
+.founder-name h3 { margin: 0; font-size: 1.5rem; }
+.founder-link { display: inline-flex; color: var(--text-muted); }
+.founder-link:hover { color: var(--text); }
+.founder-link svg { width: 1.35rem; height: 1.35rem; fill: currentColor; }
+
 /* Footer ----------------------------------------------------------------- */
 .site-footer {
   background: var(--bg-alt);
@@ -688,6 +727,7 @@ h3 {
   .results-grid { grid-template-columns: 1.25fr 1fr; }
   .case-grid { grid-template-columns: repeat(2, 1fr); }
   .help-card .stages { grid-template-columns: repeat(4, 1fr); }
+  .founder-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
@@ -733,6 +773,8 @@ h3 {
   .help-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-inner { grid-template-columns: 1fr 1fr; align-items: start; gap: 5rem; }
   .contact-form { padding: 2.5rem; }
+  .founder-grid { gap: 2rem; }
+  .founder-card { padding: 1.5rem 1.5rem 2rem; }
 }
 
 @media (min-width: 1100px) {
