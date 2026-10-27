@@ -41,7 +41,7 @@ function reply(request, status, body) {
   const wantsJson = (request.headers.get('accept') || '').includes('application/json');
   if (wantsJson) return Response.json(body, { status });
   const result = status === 200 ? 'sent' : 'error';
-  return new Response(null, { status: 303, headers: { Location: `/contact.html#${result}` } });
+  return new Response(null, { status: 303, headers: { Location: `/contact#${result}` } });
 }
 
 export async function POST(request) {
