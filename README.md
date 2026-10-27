@@ -15,6 +15,7 @@ index.html        the home page
 case-studies/     one page per case study, linked from the home page
 contact.html      contact form; every "Book an audit" button leads here
 api/contact.js    Vercel function that emails form submissions via Resend
+vercel.json       Vercel config; serves pages without the .html extension
 css/style.css     styles; palette and type live in CSS variables at the top
 js/main.js        mobile menu, hero word rotator and footer year (the pages work without it)
 images/           logo, mark, favicons and the Open Graph image
@@ -26,11 +27,13 @@ Fonts (Inter, JetBrains Mono) load from Google Fonts.
 ## Run locally
 
 ```sh
-python3 -m http.server 8000
+vercel dev
 ```
 
-Then open http://localhost:8000. The contact form needs the Vercel function,
-so to try it locally run `vercel dev` instead.
+Then open http://localhost:3000. Internal links use clean URLs (`/about`, not
+`/about.html`), which `vercel.json` maps to the HTML files, so a plain static
+server such as `python3 -m http.server` will break the links. `vercel dev` also
+runs the contact form function.
 
 ## Contact form
 
