@@ -53,6 +53,12 @@ Replies go straight to the visitor: the email's reply-to is their address.
 Hosted on Vercel as a static site: no framework preset, no build command, output
 directory is the repo root.
 
+## Analytics
+
+Vercel Web Analytics is enabled on the project. Each page loads
+`/_vercel/insights/script.js`, which Vercel serves on every deployment, so there
+is no npm package or build step involved. Locally the script 404s harmlessly.
+
 ## Brand
 
 Follows the unbottle. Brand Book v2.0:
